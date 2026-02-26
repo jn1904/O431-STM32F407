@@ -14,7 +14,6 @@ AHT20::AHT20() {
     }
 }
 
-
 AHT20::AHT20(I2C_HandleTypeDef *HI2C) {
     hi2c = HI2C;
     temperature = 0;
@@ -59,7 +58,6 @@ float AHT20::get_Value_Humidity() const {
 float AHT20::get_Value_Temperature() const {
     return temperature;
 }
-
 
 uint8_t test_AHT20(I2C_HandleTypeDef* HI2C) {
     uint8_t buffer_Receive = 0;

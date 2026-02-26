@@ -12,8 +12,6 @@ constexpr uint8_t AHT_RESET =       0xBA;
 constexpr uint8_t AHT_INIT[3] =     {0xBE, 0x08, 0x00};
 constexpr uint8_t AHT_TIGGER[3] =   {0xAC, 0X33, 0x00};
 
-
-
     class AHT20 {
     public:
         AHT20();                                                    // 构造函数，默认I2C接口1
