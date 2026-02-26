@@ -7,10 +7,10 @@ extern "C" {
 
 #include "i2c.h"
 
-constexpr uint8_t AHT20_ADDR =      0x38;
-constexpr uint8_t AHT_RESET =       0xBA;
-constexpr uint8_t AHT_INIT[3] =     {0xBE, 0x08, 0x00};
-constexpr uint8_t AHT_TIGGER[3] =   {0xAC, 0X33, 0x00};
+    constexpr uint8_t AHT20_ADDR =      0x38;
+    constexpr uint8_t AHT_RESET =       0xBA;
+    constexpr uint8_t AHT_INIT[3] =     {0xBE, 0x08, 0x00};
+    constexpr uint8_t AHT_TIGGER[3] =   {0xAC, 0X33, 0x00};
 
     class AHT20 {
     public:
