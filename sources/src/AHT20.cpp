@@ -10,9 +10,9 @@ O431::AHT20::AHT20() {
     temperature = 0;
     humidity = 0;
     HAL_I2C_Init(hi2c);
-    HAL_Delay(100);
+    HAL_Delay(40);
     if ((test_AHT20(hi2c) & 0x08) == 0x00){
-        HAL_I2C_Master_Transmit(&hi2c1,AHT20_ADDR,const_cast<uint8_t *>(AHT_INIT),3,TIME_OUT_TIME);
+        HAL_I2C_Master_Transmit(&hi2c1,AHT20_ADDR,const_cast<uint8_t *>(AHT_INIT),3,HAL_MAX_DELAY);
     }
 }
 
@@ -23,7 +23,7 @@ O431::AHT20::AHT20(I2C_HandleTypeDef *HI2C) {
     HAL_I2C_Init(hi2c);
     HAL_Delay(40);
     if (test_AHT20(hi2c)) {
-        HAL_I2C_Master_Transmit(hi2c,AHT20_ADDR,const_cast<uint8_t *>(AHT_INIT),3,TIME_OUT_TIME);
+        HAL_I2C_Master_Transmit(hi2c,AHT20_ADDR,const_cast<uint8_t *>(AHT_INIT),3,HAL_MAX_DELAY);
     }
 }
 
@@ -33,9 +33,9 @@ O431::AHT20::~AHT20() {
 
 void O431::AHT20::AHT_Read() {
     uint8_t buffer_Receive[6];
-    HAL_I2C_Master_Transmit(hi2c,AHT20_ADDR,const_cast<uint8_t *>(AHT_TIGGER),3,TIME_OUT_TIME);
+    HAL_I2C_Master_Transmit(hi2c,AHT20_ADDR,const_cast<uint8_t *>(AHT_TIGGER),3,HAL_MAX_DELAY);
     HAL_Delay(80);
-    HAL_I2C_Master_Receive(hi2c,AHT20_ADDR,buffer_Receive,6,TIME_OUT_TIME);
+    HAL_I2C_Master_Receive(hi2c,AHT20_ADDR,buffer_Receive,6,HAL_MAX_DELAY);
     if ( (buffer_Receive[0] & 0x80) == 0x00) {
         uint32_t date= (static_cast<uint32_t>(buffer_Receive[1]) << 12) +
                                  (static_cast<uint32_t>(buffer_Receive[2]) << 4) +
@@ -63,14 +63,13 @@ float O431::AHT20::get_Value_Temperature() const {
 
 uint8_t test_AHT20(I2C_HandleTypeDef* HI2C) {
     uint8_t buffer_Receive = 0;
-    HAL_I2C_Master_Transmit(HI2C,AHT20_ADDR,reinterpret_cast<uint8_t *>(0x71),2,TIME_OUT_TIME);
-    HAL_I2C_Master_Receive(HI2C,AHT20_ADDR,&buffer_Receive,2,TIME_OUT_TIME);
+    HAL_I2C_Master_Receive(HI2C,AHT20_ADDR,&buffer_Receive,1,HAL_MAX_DELAY);
     return buffer_Receive;
 }
 
-float cal_Temperature(float date) {
+float cal_Temperature(const float date) {
     return date * 200.0f / (1 << 20) - 50.0f;
 }
-float cal_Humidity(float date) {
+float cal_Humidity(const float date) {
     return date * 100.0f / (1 << 20);
 }
