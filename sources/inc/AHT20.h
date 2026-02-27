@@ -26,8 +26,8 @@ extern "C" {
 
         private:
             I2C_HandleTypeDef *hi2c;
-            float temperature;
-            float humidity;
+            volatile float temperature;
+            volatile float humidity;
 
         };
     }
