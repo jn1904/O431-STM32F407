@@ -7,6 +7,7 @@ extern "C" {
 
 #include "i2c.h"
 
+    // 物理地址是0x38，需向左移一位，故地址为0x70
     constexpr uint8_t AHT20_ADDR =      0x70;
     constexpr uint8_t AHT_RESET =       0xBA;
     inline uint8_t AHT_READ =           0x71;
