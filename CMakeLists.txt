@@ -57,6 +57,8 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     sources/src/AHT20.cpp
     sources/src/Func_Main.cpp
     sources/src/LCD.cpp
+    sources/src/I2C_extension_IO.cpp
+    sources/src/Clock_3078.cpp
 )
 
 # Add include paths
