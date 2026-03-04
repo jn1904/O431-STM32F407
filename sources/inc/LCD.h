@@ -1,23 +1,23 @@
-//
-// Created by o431 on 2026/2/25.
-//
+
 
 #ifndef F407_LCD_H
 #define F407_LCD_H
 #ifdef __cplusplus
 extern "C" {
 #endif
-    class LCD {
-    public:
+    namespace O431 {
+        class LCD {
+        public:
 
 
 
-    private:
+        private:
 
 
-    };
+        };
 
 
+    }
 
 #ifdef __cplusplus
 }
