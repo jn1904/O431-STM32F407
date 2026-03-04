@@ -1,3 +1,4 @@
+// 项目文件由c++开发，
 #ifndef F407_FUNC_MAIN_H
 #define F407_FUNC_MAIN_H
 
