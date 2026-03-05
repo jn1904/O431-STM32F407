@@ -59,6 +59,9 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     sources/src/LCD.cpp
     sources/src/I2C_extension_IO.cpp
     sources/src/Clock_3078.cpp
+    sources/src/IMU.cpp
+    sources/src/IWDG.cpp
+    sources/src/KEY.cpp
 )
 
 # Add include paths
