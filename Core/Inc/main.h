@@ -57,35 +57,15 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define KEY3_Pin GPIO_PIN_13
-#define KEY3_GPIO_Port GPIOC
-#define IMU_SPI_MISO_Pin GPIO_PIN_2
-#define IMU_SPI_MISO_GPIO_Port GPIOC
-#define IMU_SPI_MOSI_Pin GPIO_PIN_3
-#define IMU_SPI_MOSI_GPIO_Port GPIOC
 #define KEY1_Pin GPIO_PIN_0
 #define KEY1_GPIO_Port GPIOA
-#define LCD_SPI_SCK_Pin GPIO_PIN_5
-#define LCD_SPI_SCK_GPIO_Port GPIOA
-#define LCD_SPI_MISO_Pin GPIO_PIN_6
-#define LCD_SPI_MISO_GPIO_Port GPIOA
-#define LCD_SPI_MOSI_Pin GPIO_PIN_7
-#define LCD_SPI_MOSI_GPIO_Port GPIOA
-#define KEY2_Pin GPIO_PIN_8
-#define KEY2_GPIO_Port GPIOE
-#define LCD_SCL_Pin GPIO_PIN_10
-#define LCD_SCL_GPIO_Port GPIOB
-#define LCD_SDA_Pin GPIO_PIN_11
-#define LCD_SDA_GPIO_Port GPIOB
-#define IMU_SPI_SCK_Pin GPIO_PIN_13
-#define IMU_SPI_SCK_GPIO_Port GPIOB
-#define AHT_SCL_Pin GPIO_PIN_6
-#define AHT_SCL_GPIO_Port GPIOB
-#define AHT_SDA_Pin GPIO_PIN_7
-#define AHT_SDA_GPIO_Port GPIOB
+#define BUZZ_Pin GPIO_PIN_6
+#define BUZZ_GPIO_Port GPIOA
+#define LED_Pin GPIO_PIN_2
+#define LED_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
-#define TIME_OUT_TIME 10
+
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

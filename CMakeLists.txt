@@ -62,6 +62,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     sources/src/IMU.cpp
     sources/src/IWDG.cpp
     sources/src/KEY.cpp
+    sources/src/WWDG.cpp
 )
 
 # Add include paths
